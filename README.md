@@ -22,16 +22,16 @@ $ jupyter notebook
 
 ## Using Docker
 
-Build the image...
+Pull the image from DockerHub...
 
 ```bash
-$ docker build --rm -t python-for-data-science:spring-2019 .
+$ docker pull kaustvl/introduction-to-python-for-data-science:spring-2019
 ```
 
 ...then run a container using the newly built image...
 
 ```bash
-$ docker run --rm -v $(pwd):/home/al-khawarizmi/project -p 8888:8888 -it python-for-data-science:spring-2019
+$ docker run --rm -v $(pwd):/home/al-khawarizmi/project -p 8888:8888 -it kaustvl/introduction-to-python-for-data-science:spring-2019
 ```
 
 ...inside the container the conda environment should already be activated so just launch the notebook server...
