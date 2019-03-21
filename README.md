@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kaust-vislab/introduction-to-python-for-data-science/spring-2019)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kaust-vislab/introduction-to-python-for-data-science/fall-2019)
 
 # Python for Data Science Workshop (Spring 2019)
 
