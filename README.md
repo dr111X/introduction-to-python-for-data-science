@@ -63,7 +63,6 @@ In addition to the Python lessons that we will cover in the workshop, [The Carpe
 Here are a few Jupyter notebook cheat sheets that I have encountered and found useful.
 
 * [Anaconda Jupyter Notebook Cheatsheet](https://docs.anaconda.com/_downloads/JupyterLab-Notebook-Cheatsheet.pdf)
-* [DataCamp Jupyter Notebook Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Jupyter_Notebook_Cheat_Sheet.pdf])
 * [JupyterLab: Evolution of the Jupyter Notebook](https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b)
 
 ### Machine Learning and Deep Learning
