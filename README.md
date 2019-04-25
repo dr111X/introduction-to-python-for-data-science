@@ -25,7 +25,7 @@ $ conda update -y conda
 $ conda init
 ```
 
-If Conda has not been installed on your machine, then install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) from Anaconda for your OS. Once you have installed Conda on your machine run the following commands in make sure that you have the most recent version and patches.
+If Conda has not been installed on your machine, then install the Python 3 version of [Miniconda](https://docs.conda.io/en/latest/miniconda.html) from Anaconda for your OS. Once you have installed Conda on your machine run the following commands in make sure that you have the most recent version and patches.
 
 ```bash
 $ conda update -y conda
