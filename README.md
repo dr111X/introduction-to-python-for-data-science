@@ -4,12 +4,54 @@
 
 ## Installation Instructions
 
-Install [Git](https://github.com/kaust-vislab/introduction-to-git-for-data-scientists#installation-instructions) so that you can [clone the repository](https://help.github.com/en/articles/cloning-a-repository) for the workshop onto your local machine.
+### Install Conda
+
+First, check whether the [Conda](https://docs.conda.io/en/latest/) package management system is installed on your local machine by running the following command in a terminal.
+
+```bash
+$ which conda
+```
+
+If you are running Windows, then run the following command in a command prompt.
+
+```
+$ where conda
+```
+
+If Conda already exists on your machine, then run the following commands to make sure that you have the most recent version and patches.
+
+```bash
+$ conda update -y conda
+$ conda init
+```
+
+If Conda has not been installed on your machine, then install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) from Anaconda for your OS. Once you have installed Conda on your machine run the following commands in make sure that you have the most recent version and patches.
+
+```bash
+$ conda update -y conda
+$ conda init
+```
+
+### Install Git
+Next we need to install [Git](https://git-scm.com/) so that you can [clone the repository](https://help.github.com/en/articles/cloning-a-repository) for the workshop onto your local machine. Easiest way to install Git is to simply use Conda.
+
+```bash
+$ conda install -n base git
+```
 
 To clone this repository open a terminal (or Git Bash shell if you installed Git on Windows), change the current working directory to the location where you want to create the clone of this repository and then run the following command in the terminal.
 
 ```bash
 $ git clone https://github.com/kaust-vislab/introduction-to-python-for-data-science.git
+```
+
+### Create and activate the Conda environment for this workshop
+Once both Conda and Git have been installed, you can create and activate the appropriate software environment for the workshop using the following commands in the terminal.
+
+```bash
+$ cd introduction-to-python-for-data-science
+$ conda env create -f environment.yml
+$ conda activate introduction-to-python-for-data-science
 ```
 
 ### Using Docker
