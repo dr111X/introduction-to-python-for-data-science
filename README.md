@@ -68,22 +68,6 @@ Inside the container the Conda environment will already be activated so you can 
 
 Finally open a browser on your local machine and copy and paste the provided url.
 
-### Without using Docker
-
-Install the Python 3 version of [Miniconda](https://docs.conda.io/en/latest/miniconda.html) from Anaconda for your OS. Once you have installed Conda on your local machine you can use Conda to create and activate the software environment for the workshop by running the following commands in the terminal.
-
-```bash
-$ cd introduction-to-python-for-data-science
-$ conda env create -f environment.yml
-$ conda activate introduction-to-python-for-data-science
-```
-
-Once the environment has been activated, then you can launch the JupyterLab server by typing the following command in the terminal.
-
-```bash
-$ jupyter lab
-```
-
 ## Additional Resources
 
 ### Core Data Science tools
