@@ -6,7 +6,7 @@
 
 ### Install Git
 
-First we need to install [Git](https://git-scm.com/) so that you can [clone the repository](https://help.github.com/en/articles/cloning-a-repository) for the workshop onto your local machine. Instructions for installing Git depend (slightly!) on your operating system and can be found in the [Introduction to Git for (Data) Scientists](https://github.com/kaust-vislab/introduction-to-git-for-data-scientists#installation-instructions) repository. 
+First you need to install [Git](https://git-scm.com/) so that you can [clone the repository](https://help.github.com/en/articles/cloning-a-repository) for the workshop onto your local machine. Instructions for installing Git depend (slightly!) on your operating system and can be found in the [Introduction to Git for (Data) Scientists](https://github.com/kaust-vislab/introduction-to-git-for-data-scientists#installation-instructions) repository. 
 
 After installing git, to clone this repository open a terminal (or Git Bash shell if you installed Git on Windows), change the current working directory to the location where you want to create the clone of this repository and then run the following command in the terminal.
 
@@ -43,6 +43,7 @@ $ conda init
 ```
 
 ### Create and activate the Conda environment for this workshop
+
 Once both Conda and Git have been installed, you can create and activate the appropriate software environment for the workshop using the following commands in the terminal.
 
 ```bash
@@ -51,9 +52,17 @@ $ conda env create -f environment.yml
 $ conda activate introduction-to-python-for-data-science
 ```
 
-### Using Docker
+### Install Docker (optional)
 
-[Download and install Docker CE](https://hub.docker.com/search/?type=edition&offering=community) for you OS. In order to download Docker CE you will need to setup an account with [DockerHub](https://hub.docker.com/). Once you are logged into DockerHub and have downloaded and installed Docker CE, then you can run a container with all of the required software for the workshop properly installed and configured by running the following commands in the terminal.
+An alternative path to obtain the necessary software for the workshop is to install [Docker](https://www.docker.com/). First you need to [download and install Docker CE](https://hub.docker.com/search/?type=edition&offering=community) for your operating system. In order to download Docker CE you will need to setup an account with [DockerHub](https://hub.docker.com/). 
+
+After installing git, to clone this repository open a terminal (or Git Bash shell if you installed Git on Windows), change the current working directory to the location where you want to create the clone of this repository and then run the following command in the terminal.
+
+```bash
+$ git clone https://github.com/kaust-vislab/introduction-to-python-for-data-science.git
+```
+
+Once you aare finished cloning the workshop repository, you can run a container with all of the required software for the workshop properly installed and configured by running the following commands in the terminal.
 
 ```bash
 $ cd introduction-to-python-for-data-science/
@@ -66,7 +75,7 @@ Inside the container the Conda environment will already be activated so you can 
 > jupyter lab --ip 0.0.0.0 --no-browser
 ```
 
-Finally open a browser on your local machine and copy and paste the provided url.
+Finally open a browser on your local machine and copy and paste the provided url and you should be good to go!
 
 ## Additional Resources
 
