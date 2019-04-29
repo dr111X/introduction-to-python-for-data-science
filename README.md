@@ -4,9 +4,19 @@
 
 ## Installation Instructions
 
+### Install Git
+
+First we need to install [Git](https://git-scm.com/) so that you can [clone the repository](https://help.github.com/en/articles/cloning-a-repository) for the workshop onto your local machine. Instructions for installing Git depend (slightly!) on your operating system and can be found in the [Introduction to Git for (Data) Scientists](https://github.com/kaust-vislab/introduction-to-git-for-data-scientists#installation-instructions) repository. 
+
+After installing git, to clone this repository open a terminal (or Git Bash shell if you installed Git on Windows), change the current working directory to the location where you want to create the clone of this repository and then run the following command in the terminal.
+
+```bash
+$ git clone https://github.com/kaust-vislab/introduction-to-python-for-data-science.git
+```
+
 ### Install Conda
 
-First, check whether the [Conda](https://docs.conda.io/en/latest/) package management system is installed on your local machine by running the following command in a terminal.
+Next check whether the [Conda](https://docs.conda.io/en/latest/) package management system is installed on your local machine by running the following command in a terminal.
 
 ```bash
 $ which conda
@@ -30,19 +40,6 @@ If Conda has not been installed on your machine, then install the Python 3 versi
 ```bash
 $ conda update -y conda
 $ conda init
-```
-
-### Install Git
-Next we need to install [Git](https://git-scm.com/) so that you can [clone the repository](https://help.github.com/en/articles/cloning-a-repository) for the workshop onto your local machine. Easiest way to install Git is to simply use Conda.
-
-```bash
-$ conda install -n base git
-```
-
-To clone this repository open a terminal (or Git Bash shell if you installed Git on Windows), change the current working directory to the location where you want to create the clone of this repository and then run the following command in the terminal.
-
-```bash
-$ git clone https://github.com/kaust-vislab/introduction-to-python-for-data-science.git
 ```
 
 ### Create and activate the Conda environment for this workshop
