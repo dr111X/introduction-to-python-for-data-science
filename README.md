@@ -1,48 +1,81 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kaust-vislab/introduction-to-python-for-data-science/fall-2019)
 
-# Python for Data Science Workshop (Spring 2019)
+# Python for Data Science Workshop (Fall 2019)
 
-## Using Conda
+## Installation Instructions
 
-Create the environment...
+### Install Git
+
+First you need to install [Git](https://git-scm.com/) so that you can [clone the repository](https://help.github.com/en/articles/cloning-a-repository) for the workshop onto your local machine. Instructions for installing Git depend (slightly!) on your operating system and can be found in the [Introduction to Git for (Data) Scientists](https://github.com/kaust-vislab/introduction-to-git-for-data-scientists#installation-instructions) repository. 
+
+After installing git, to clone this repository open a terminal (or Git Bash shell if you installed Git on Windows), change the current working directory to the location where you want to create the clone of this repository and then run the following command in the terminal.
 
 ```bash
+$ git clone https://github.com/kaust-vislab/introduction-to-python-for-data-science.git
+```
+
+### Install Conda
+
+Next check whether the [Conda](https://docs.conda.io/en/latest/) package management system is installed on your local machine by running the following command in a terminal.
+
+```bash
+$ which conda
+```
+
+If you are running Windows, then run the following command in a command prompt.
+
+```
+$ where conda
+```
+
+If Conda already exists on your machine, then run the following commands to make sure that you have the most recent version and patches.
+
+```bash
+$ conda update -y conda
+$ conda init
+```
+
+If Conda has not been installed on your machine, then install the Python 3 version of [Miniconda](https://docs.conda.io/en/latest/miniconda.html) from Anaconda for your OS. Once you have installed Conda on your machine run the following commands in make sure that you have the most recent version and patches.
+
+```bash
+$ conda update -y conda
+$ conda init
+```
+
+### Create and activate the Conda environment for this workshop
+
+Once both Conda and Git have been installed, you can create and activate the appropriate software environment for the workshop using the following commands in the terminal.
+
+```bash
+$ cd introduction-to-python-for-data-science
 $ conda env create -f environment.yml
+$ conda activate introduction-to-python-for-data-science
 ```
 
-...then activate the newly created environment...
+### Install Docker (optional)
+
+An alternative path to obtain the necessary software for the workshop is to install [Docker](https://www.docker.com/). First you need to [download and install Docker CE](https://hub.docker.com/search/?type=edition&offering=community) for your operating system. In order to download Docker CE you will need to setup an account with [DockerHub](https://hub.docker.com/). 
+
+After installing git, to clone this repository open a terminal (or Git Bash shell if you installed Git on Windows), change the current working directory to the location where you want to create the clone of this repository and then run the following command in the terminal.
 
 ```bash
-$ source activate $(head -1 $environment.yml | cut -d' ' -f2)
+$ git clone https://github.com/kaust-vislab/introduction-to-python-for-data-science.git
 ```
 
-...then launch the notebook server.
+Once you aare finished cloning the workshop repository, you can run a container with all of the required software for the workshop properly installed and configured by running the following commands in the terminal.
 
 ```bash
-$ jupyter notebook
+$ cd introduction-to-python-for-data-science/
+$ docker container run --rm -v $(pwd):/home/al-khawarizmi/project -p 8888:8888 -it kaustvl/introduction-to-python-for-data-science:fall-2019
 ```
 
-## Using Docker
-
-Pull the image from DockerHub...
+Inside the container the Conda environment will already be activated so you can just launch the JupyterLab server as follows.
 
 ```bash
-$ docker pull kaustvl/introduction-to-python-for-data-science:spring-2019
+> jupyter lab --ip 0.0.0.0 --no-browser
 ```
 
-...then run a container using the newly built image...
-
-```bash
-$ docker run --rm -v $(pwd):/home/al-khawarizmi/project -p 8888:8888 -it kaustvl/introduction-to-python-for-data-science:spring-2019
-```
-
-...inside the container the conda environment should already be activated so just launch the notebook server...
-
-```bash
-$ jupyter notebook --ip 0.0.0.0 --no-browser
-```
-
-...then open a browser on your local machine and copy and paste the provided link.
+Finally open a browser on your local machine and copy and paste the provided url and you should be good to go!
 
 ## Additional Resources
 
@@ -62,7 +95,7 @@ In addition to the Python lessons that we will cover in the workshop, [The Carpe
 Here are a few Jupyter notebook cheat sheets that I have encountered and found useful.
 
 * [Anaconda Jupyter Notebook Cheatsheet](https://docs.anaconda.com/_downloads/JupyterLab-Notebook-Cheatsheet.pdf)
-* [DataCamp Jupyter Notebook Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Jupyter_Notebook_Cheat_Sheet.pdf])
+* [JupyterLab: Evolution of the Jupyter Notebook](https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b)
 
 ### Machine Learning and Deep Learning
 
