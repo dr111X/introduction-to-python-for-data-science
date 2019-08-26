@@ -1,16 +1,13 @@
-FROM continuumio/miniconda3:4.6.14
+FROM continuumio/miniconda3:4.7.10
 
-MAINTAINER pughdr <david.pugh@kaust.edu.sa>
+LABEL maintainer="david.pugh@kaust.edu.sa"
 
 SHELL [ "/bin/bash", "-c" ]
 
 # Create a non-root user
-ARG username
-ARG uid
-ARG gid
-ENV USER ${username}
-ENV UID ${uid}
-ENV GID ${gid}
+ENV USER al-khawarizmi
+ENV UID 1000
+ENV GID 100
 ENV HOME /home/$USER
 
 RUN adduser --disabled-password \
@@ -26,15 +23,13 @@ RUN mkdir $HOME/app
 WORKDIR $HOME/app
 
 # build the specified conda environment from a file (defaults to 'environment.yml')
-ARG environment
-COPY --chown=$UID:$GID ${environment} /usr/tmp/environment.yml
+COPY --chown=$UID:$GID environment.yml /usr/tmp/environment.yml
 RUN conda env create --prefix ./env --file /usr/tmp/environment.yml && \
     conda clean --all --force-pkgs-dir --yes && \
     conda init bash
 
 # use an entrypoint script to insure conda environment is properly activated at runtime
-ARG entrypoint
-COPY --chown=$UID:$GID ${entrypoint} /usr/local/bin/docker-entrypoint.sh
+COPY --chown=$UID:$GID docker/entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
 
