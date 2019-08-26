@@ -6,30 +6,28 @@ SHELL [ "/bin/bash", "-c" ]
 
 # Create a non-root user
 ENV USER al-khawarizmi
-ENV UID 1000
-ENV GID 100
 ENV HOME /home/$USER
 
 RUN adduser --disabled-password \
     --gecos "Non-root user" \
-    --uid $UID \
-    --gid $GID \
+    --uid 1000 \
+    --gid 100 \
     --home $HOME \
     $USER
 
 # want to create conda environment as non-root user 
-USER ${USER}
+USER $USER
 RUN mkdir $HOME/app
 WORKDIR $HOME/app
 
 # build the specified conda environment from a file (defaults to 'environment.yml')
-COPY --chown=$UID:$GID environment.yml /usr/tmp/environment.yml
+COPY --chown=1000:100 environment.yml /usr/tmp/environment.yml
 RUN conda env create --prefix ./env --file /usr/tmp/environment.yml && \
     conda clean --all --force-pkgs-dir --yes && \
     conda init bash
 
 # use an entrypoint script to insure conda environment is properly activated at runtime
-COPY --chown=$UID:$GID docker/entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY --chown=1000:100 docker/entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
 
