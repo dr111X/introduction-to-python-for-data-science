@@ -1,5 +1,5 @@
 @snap[north span-100]
-### Introduction to R for Data Science
+### Introduction to Python for Data Science
 @snapend
 
 @snap[south-west text-08]
