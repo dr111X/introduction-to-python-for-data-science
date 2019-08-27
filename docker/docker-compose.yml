@@ -2,21 +2,14 @@ version: "3.7"
 
 services:
   jupyterlab-server:
-    build:
-      args:
-        - username=${USER}
-        - uid=${UID}
-        - gid=${GID}
-        - environment=environment.yml
-        - entrypoint=docker/entrypoint.sh
-      context: ../
-      dockerfile: docker/Dockerfile
+    image: kaustvl/introduction-to-python-for-data-science:fall-2019
     ports:
       - "8888:8888"
     volumes:
-      - ../bin:/home/${USER}/app/bin
-      - ../data:/home/${USER}/app/data
-      - ../src:/home/${USER}/app/src
+      - ../bin:/home/al-khawarizmi/app/bin
+      - ../data:/home/al-khawarizmi/app/data
+      - ../data:/home/al-khawarizmi/app/notebooks
+      - ../src:/home/al-khawarizmi/app/src
     init: true
     stdin_open: true
     tty: true    
