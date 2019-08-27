@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:4.7.10
+FROM continuumio/miniconda3:4.6.14
 
 LABEL maintainer="david.pugh@kaust.edu.sa"
 
