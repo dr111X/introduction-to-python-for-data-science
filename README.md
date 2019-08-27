@@ -12,7 +12,11 @@ lesson developed by the [Software Carpentry](https://software-carpentry.org/) co
 ## Software Installation Instructions
 
 Instructions for installing the software required to complete the workship are also available 
-[online](https://kaust-vislab.github.io/python-novice-gapminder/setup/).
+[online](https://kaust-vislab.github.io/python-novice-gapminder/setup/). If you have trouble 
+installing the required software for the workshop on your local machine, then you can click on the 
+"launch binder" button at the top of this README which will launch a 
+[Binder](https://mybinder.readthedocs.io/en/latest/introduction.html#what-is-the-binder-project) 
+on Google Cloud Platform (GCP) with all of the required software pre-installed. 
 
 ### Git (Optional)
 
