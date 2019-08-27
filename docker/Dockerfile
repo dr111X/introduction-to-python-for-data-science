@@ -1,8 +1,11 @@
-FROM continuumio/miniconda3:4.6.14
+FROM continuumio/miniconda3:4.7.10
 
 LABEL maintainer="david.pugh@kaust.edu.sa"
 
 SHELL [ "/bin/bash", "-c" ]
+
+# Update conda as root
+RUN conda update --name base --channel defaults conda
 
 # Create a non-root user
 ENV USER al-khawarizmi
@@ -15,18 +18,18 @@ RUN adduser --disabled-password \
     --home $HOME \
     $USER
 
-# want to create conda environment as non-root user 
+# Create conda environment as non-root user 
 USER $USER
 RUN mkdir $HOME/app
 WORKDIR $HOME/app
 
-# build the specified conda environment from a file (defaults to 'environment.yml')
+# Build the specified conda environment from an environment file
 COPY --chown=1000:100 environment.yml /usr/tmp/environment.yml
 RUN conda env create --prefix ./env --file /usr/tmp/environment.yml && \
     conda clean --all --force-pkgs-dir --yes && \
     conda init bash
 
-# use an entrypoint script to insure conda environment is properly activated at runtime
+# Use an entrypoint script to insure conda environment is properly activated at runtime
 COPY --chown=1000:100 docker/entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
