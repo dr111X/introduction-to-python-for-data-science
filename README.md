@@ -1,3 +1,4 @@
+[![GitPitch](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/kaust-vislab/introduction-to-python-for-data-science/fall-2019?grs=github)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kaust-vislab/introduction-to-python-for-data-science/fall-2019)
 
 # Python for Data Science Workshop (Fall 2019)
