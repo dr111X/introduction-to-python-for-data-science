@@ -5,7 +5,7 @@ LABEL maintainer="david.pugh@kaust.edu.sa"
 SHELL [ "/bin/bash", "-c" ]
 
 # Update conda as root
-RUN conda update --name base --channel defaults conda
+RUN conda update --name base --channel defaults --yes conda
 
 # Create a non-root user
 ENV USER al-khawarizmi
