@@ -8,7 +8,9 @@ services:
     volumes:
       - ../bin:/home/al-khawarizmi/app/bin
       - ../data:/home/al-khawarizmi/app/data
-      - ../data:/home/al-khawarizmi/app/notebooks
+      - ../doc:/home/al-khawarizmi/app/doc
+      - ../notebooks:/home/al-khawarizmi/app/notebooks
+      - ../results:/home/al-khawarizmi/app/results
       - ../src:/home/al-khawarizmi/app/src
     init: true
     stdin_open: true

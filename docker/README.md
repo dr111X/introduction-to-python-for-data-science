@@ -7,9 +7,12 @@ copy of the image, the image will be automatically downloaded from DockerHub.
 ```bash
 $ docker container run \
   --rm \
+  --volume $PWD/bin:/home/al-khawarizmi/app/bin \
   --volume $PWD/data:/home/al-khawarizmi/app/data \
-  --volume $PWD/bin:/home/al-khawarizmi/app/notebooks \
+  --volume $PWD/doc:/home/al-khawarizmi/app/doc \
+  --volume $PWD/notebooks:/home/al-khawarizmi/app/notebooks \
   --volume $PWD/src:/home/al-khawarizmi/app/src \
+  --volume $PWD/results:/home/al-khawarizmi/app/results \
   --publish 8888:8888 \
   kaustvl/introduction-to-python-for-data-science:fall-2019
 ```
